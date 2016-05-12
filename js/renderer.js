@@ -45,11 +45,10 @@
         }
       });
     },
-    /* Observer design pattern */
-    subscribe: function(obj) {
+    addRenderer: function(obj) {
       this._renderList.push(obj);
     },
-    unsubscribe: function(obj) {
+    removeRenderer: function(obj) {
       for(var i = this._renderList.length-1; i>=0; i--){
         if (this._renderList[i] === obj) this._renderList.splice(i, 1);
       }

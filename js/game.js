@@ -36,14 +36,13 @@
         this._renderer.debug();
       }
     },
-    /* Observer design pattern */
-    subscribe: function(obj) {
+    addTicker: function(obj) {
       this._tickList.push(obj);
       if(typeof obj.render == 'function') {
         this._renderer.subscribe(obj);
       }
     },
-    unsubscribe: function(obj) {
+    removeTicker: function(obj) {
       for(var i = this._tickList.length-1; i>=0; i--){
         if (this._tickList[i] === obj) this._tickList.splice(i, 1);
       }
@@ -61,7 +60,7 @@
 $(document).ready(function() {
   game.engine.setRenderer(game.renderer);
 
-  game.engine.subscribe(game.stock);
+  game.engine.addTicker(game.stock);
 
   game.engine.init('en', true);
 });

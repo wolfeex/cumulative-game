@@ -5,4 +5,5 @@ Incremental Game Prototype
 - 1 second game loop
 - simple DOM renderer
 - resources stock
+- i18n system
 - debug
