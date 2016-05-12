@@ -1,7 +1,7 @@
 # cumulative-game
 Incremental Game Prototype
 
-˜˜Implements :˜˜
+~~Implements :~~
 - 1 second game loop
 - simple DOM renderer
 - resources stock
