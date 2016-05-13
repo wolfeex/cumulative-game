@@ -1,9 +1,11 @@
 
 (function(game, $){
   game.renderer = {
+    _debug: false,
     _renderList: [],
     init: function(debug) {
-      if(debug !== 'undefined' && debug) {
+      this._debug = typeof debug !== 'undefined' ? debug : false;
+      if(this._debug) {
         $('#wrapper').append($('<section id="debug">').load('tpl/debug.html'));
       }
       $('#wrapper').append($('<section id="main">').load('tpl/main.html', function(){
@@ -12,18 +14,27 @@
       }.bind(this)));
     },
     render: function() {
-      for(var i=0; i<this._renderList.length; i++) {
-        this._renderList[i].render();
+      if(this._debug) {
+        $('#debug').find('[data-bind]').each(function(i, elem) {
+          try {
+            var data = eval($(elem).data('bind'));
+            if(!Number.isNaN(data) && data != Number.POSITIVE_INFINITY && data != Number.NEGATIVE_INFINITY) {
+              $(elem).text(data);
+            }
+          } catch(e) {}
+        });
       }
 
-      $('[data-bind]').each(function(i, elem) {
-        try {
-          var data = eval($(elem).data('bind'));
-          if(!Number.isNaN(data) && data != Number.POSITIVE_INFINITY && data != Number.NEGATIVE_INFINITY) {
-            $(elem).text(data);
-          }
-        } catch(e) {}
-      });
+      for(var i=0; i<this._renderList.length; i++) {
+        $('#'+ this._renderList[i].IDVIEW).find('[data-bind]').each(function(i, elem) {
+          try {
+            var data = eval($(elem).data('bind'));
+            if(!Number.isNaN(data) && data != Number.POSITIVE_INFINITY && data != Number.NEGATIVE_INFINITY) {
+              $(elem).text(data);
+            }
+          } catch(e) {}
+        });
+      }
     },
     debug: function() {
 

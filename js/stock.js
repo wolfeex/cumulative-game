@@ -1,6 +1,7 @@
 
 (function(game, jquery){
   game.stock = {
+    IDVIEW: 'stock',
     wood: 0,
     iron: 0,
     copper: 0,
