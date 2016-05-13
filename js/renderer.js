@@ -47,6 +47,7 @@
         url: 'i18n/' + lang + '.js',
         dataType: 'json',
         async: false,
+        cache: false,
         success: function(data) {
           langFile = data;
 

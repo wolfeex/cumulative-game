@@ -1,6 +1,6 @@
 <h1 data-i18n="title">Game</h1>
 
-<article id="stock">
+<article id="stock" class="component">
   <h4 data-i18n="stock-title"></h4>
   <div>
     <p data-i18n="stock-wood"></p>
@@ -21,5 +21,37 @@
   <div>
     <p data-i18n="stock-food"></p>
     <p data-bind="game.stock.food + ' / ' + game.stock.foodMax"></p>
+  </div>
+</article>
+
+<article id="buildings" class="component">
+  <h4 data-i18n="buildings-title"></h4>
+  <div>
+    <p data-i18n="buildings-farm"></p>
+    <p data-bind="game.buildings.farm.count + ' / ' + game.buildings.farm.max"></p>
+  </div>
+  <div>
+    <p data-i18n="buildings-barn"></p>
+    <p data-bind="game.buildings.barn.count + ' / ' + game.buildings.barn.max"></p>
+  </div>
+  <div>
+    <p data-i18n="buildings-ironmine"></p>
+    <p data-bind="game.buildings.ironMine.count + ' / ' + game.buildings.ironMine.max"></p>
+  </div>
+  <div>
+    <p data-i18n="buildings-coppermine"></p>
+    <p data-bind="game.buildings.copperMine.count + ' / ' + game.buildings.copperMine.max"></p>
+  </div>
+  <div>
+    <p data-i18n="buildings-goldmine"></p>
+    <p data-bind="game.buildings.goldMine.count + ' / ' + game.buildings.goldMine.max"></p>
+  </div>
+</article>
+
+<article id="population" class="component">
+  <h4 data-i18n="population-title"></h4>
+  <div>
+    <p data-i18n="population-people"></p>
+    <p data-bind="game.population.count"></p>
   </div>
 </article>

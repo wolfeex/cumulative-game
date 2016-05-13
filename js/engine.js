@@ -41,7 +41,9 @@
       }
     },
     addComponent: function(obj) {
-      this._tickList.push(obj);
+      if(typeof obj.tick == 'function') {
+        this._tickList.push(obj);
+      }
       if(typeof obj.IDVIEW != 'undefined') {
         this._renderer.addRenderer(obj);
       }
