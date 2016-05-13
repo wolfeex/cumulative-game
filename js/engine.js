@@ -59,7 +59,13 @@
     setRenderer: function(obj) {
       this._renderer = obj;
     },
-    getLang: function() {
+    setLanguage: function(lang) {
+      if(lang != this._lang) {
+        this._lang = lang;
+        this._renderer.updateLanguage();
+      }
+    },
+    getLanguage: function() {
       return this._lang;
     }
   };

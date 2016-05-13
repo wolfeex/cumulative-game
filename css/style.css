@@ -12,12 +12,10 @@ body {
   color: #333;
 }
 
-#wrapper {
-
-}
-
-#main {
-
+#wrapper footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 #debug {

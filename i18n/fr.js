@@ -1,0 +1,21 @@
+{
+  "title": "Jeu Incrémental",
+  "stock-title": "Stock",
+  "stock-wood": "Bois",
+  "stock-iron": "Fer",
+  "stock-copper": "Cuivre",
+  "stock-gold": "Or",
+  "stock-food": "Nourriture",
+  "buildings-title": "Bâtiments",
+  "buildings-house": "Maison",
+  "buildings-farm": "Ferme",
+  "buildings-barn": "Grange",
+  "buildings-storehouse": "Entrepôt",
+  "buildings-ironmine": "Mine de fer",
+  "buildings-coppermine": "Mine de cuivre",
+  "buildings-goldmine": "Mine d'or",
+  "buildings-wonder": "Merveille",
+  "population-title": "Population",
+  "population-people": "Nombre",
+  "population-hunger": "Faim"
+}

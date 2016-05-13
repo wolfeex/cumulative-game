@@ -12,6 +12,7 @@
         this.render();
         this.updateLanguage();
       }.bind(this)));
+      $('#wrapper').append($('<footer>').load('tpl/footer.html'));
     },
     render: function() {
       if(this._debug) {
@@ -40,7 +41,7 @@
 
     },
     updateLanguage: function() {
-      var lang = game.engine.getLang();
+      var lang = game.engine.getLanguage();
 
       $.ajax({
         type: 'GET',

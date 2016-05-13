@@ -30,10 +30,7 @@
         count: 0,
         production: {},
         stock: {
-          wood: 10,
-          iron: 10,
-          copper: 10,
-          gold: 10,
+          wood: 100,
           food: 100
         },
         max: 5,
@@ -42,7 +39,22 @@
           iron: 10
         },
         population: 0
-      }
+      };
+      this.storehouse = {
+        count: 0,
+        production: {},
+        stock: {
+          iron: 100,
+          copper: 100,
+          gold: 100
+        },
+        max: 5,
+        cost: {
+          wood: 10,
+          iron: 10
+        },
+        population: 0
+      };
       this.ironMine = {
         count: 0,
         production: {

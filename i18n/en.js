@@ -1,5 +1,5 @@
 {
-  "title": "Game",
+  "title": "Incremental Game",
   "stock-title": "Stock",
   "stock-wood": "Wood",
   "stock-iron": "Iron",
@@ -10,11 +10,12 @@
   "buildings-house": "House",
   "buildings-farm": "Farm",
   "buildings-barn": "Barn",
+  "buildings-storehouse": "Storehouse",
   "buildings-ironmine": "Iron mine",
   "buildings-coppermine": "Copper mine",
   "buildings-goldmine": "Gold mine",
   "buildings-wonder": "Wonder",
   "population-title": "Population",
-  "population-people": "People",
+  "population-people": "Count",
   "population-hunger": "Hunger"
 }
