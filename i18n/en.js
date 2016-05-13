@@ -7,11 +7,14 @@
   "stock-gold": "Gold",
   "stock-food": "Food",
   "buildings-title": "Buildings",
+  "buildings-house": "House",
   "buildings-farm": "Farm",
   "buildings-barn": "Barn",
   "buildings-ironmine": "Iron mine",
   "buildings-coppermine": "Copper mine",
   "buildings-goldmine": "Gold mine",
+  "buildings-wonder": "Wonder",
   "population-title": "Population",
-  "population-people": "People"
+  "population-people": "People",
+  "population-hunger": "Hunger"
 }

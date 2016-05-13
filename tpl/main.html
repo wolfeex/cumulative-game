@@ -27,6 +27,10 @@
 <article id="buildings" class="component">
   <h4 data-i18n="buildings-title"></h4>
   <div>
+    <p data-i18n="buildings-house"></p>
+    <p data-bind="game.buildings.house.count + ' / ' + game.buildings.house.max"></p>
+  </div>
+  <div>
     <p data-i18n="buildings-farm"></p>
     <p data-bind="game.buildings.farm.count + ' / ' + game.buildings.farm.max"></p>
   </div>
@@ -46,12 +50,20 @@
     <p data-i18n="buildings-goldmine"></p>
     <p data-bind="game.buildings.goldMine.count + ' / ' + game.buildings.goldMine.max"></p>
   </div>
+  <div>
+    <p data-i18n="buildings-wonder"></p>
+    <p data-bind="game.buildings.wonder.count + ' / ' + game.buildings.wonder.max"></p>
+  </div>
 </article>
 
 <article id="population" class="component">
   <h4 data-i18n="population-title"></h4>
   <div>
     <p data-i18n="population-people"></p>
-    <p data-bind="game.population.count"></p>
+    <p data-bind="game.population.count + ' / ' + game.population.max"></p>
+  </div>
+  <div>
+    <p data-i18n="population-hunger"></p>
+    <p data-bind="game.population.hunger + ' / ' + game.population.hungerMax"></p>
   </div>
 </article>

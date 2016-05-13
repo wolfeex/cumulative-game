@@ -5,7 +5,7 @@
     _lang: 'en',
     _loopInterval: null,
     _startDate: null,
-    _tickList: [],
+    _componentList: [],
     _renderer: null,
     infos: {
       tickCount: 0
@@ -15,12 +15,15 @@
       this._lang = typeof debug !== 'undefined' ? lang : 'en';
       this._startDate = Date.now();
       this._renderer.init(this._debug);
-      this.start();
-    },
-    start: function() {
-      if(!this._loopInterval) {
-        this._loopInterval = setInterval(this._tick.bind(this), 1000);
+      for(var i=0; i<this._componentList.length; i++) {
+        if(typeof this._componentList[i].init == 'function') {
+          this._componentList[i].init();
+        }
       }
+      if(this._loopInterval) {
+        this.stop();
+      }
+      this._loopInterval = setInterval(this._tick.bind(this), 1000);
     },
     stop: function() {
       clearInterval(this._loopInterval);
@@ -29,8 +32,10 @@
     /* Game loop function */
     _tick: function() {
       this.infos.tickCount++;
-      for(var i=0; i<this._tickList.length; i++) {
-        this._tickList[i].tick();
+      for(var i=0; i<this._componentList.length; i++) {
+        if(typeof this._componentList[i].tick == 'function') {
+          this._componentList[i].tick();
+        }
       }
       this._render();
     },
@@ -41,16 +46,14 @@
       }
     },
     addComponent: function(obj) {
-      if(typeof obj.tick == 'function') {
-        this._tickList.push(obj);
-      }
+      this._componentList.push(obj);
       if(typeof obj.IDVIEW != 'undefined') {
         this._renderer.addRenderer(obj);
       }
     },
     removeComponent: function(obj) {
-      for(var i = this._tickList.length-1; i>=0; i--){
-        if (this._tickList[i] === obj) this._tickList.splice(i, 1);
+      for(var i = this._componentList.length-1; i>=0; i--){
+        if (this._componentList[i] === obj) this._componentList.splice(i, 1);
       }
     },
     setRenderer: function(obj) {

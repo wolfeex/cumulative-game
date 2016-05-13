@@ -2,87 +2,103 @@
 (function(game, $) {
   game.buildings = {
     IDVIEW: 'buildings',
-    farm: {
-      count: 1,
-      production: {
-        food: 5
-      },
-      stock: {},
-      max: 10,
-      cost: {
-        wood: 10,
-        iron: 10
-      },
-      evolution: []
-    },
-    barn: {
-      count: 0,
-      production: {},
-      stock: {
-        wood: 10,
-        iron: 10,
-        copper: 10,
-        gold: 10,
-        food: 100
-      },
-      max: 5,
-      cost: {
-        wood: 10,
-        iron: 10
-      },
-      evolution: []
-    },
-    ironMine: {
-      count: 0,
-      production: {
-        iron: 1
-      },
-      stock: {},
-      max: 3,
-      cost: {
-        wood: 50
-      },
-      evolution: []
-    },
-    copperMine: {
-      count: 2,
-      production: {
-        copper: 1
-      },
-      stock: {},
-      max: 2,
-      cost: {
-        wood: 50,
-        iron: 50
-      },
-      evolution: []
-    },
-    goldMine: {
-      count: 0,
-      production: {
-        gold: 1
-      },
-      stock: {},
-      max: 1,
-      cost: {
-        wood: 50,
-        iron: 50,
-        copper: 50
-      },
-      evolution: []
-    },
-    wonder: {
-      count: 0,
-      production: {},
-      stock: {},
-      max: 1,
-      cost: {
-        gold: 100
-      },
-      evolution: []
+    init: function() {
+      this.house = {
+        count: 0,
+        production: {},
+        stock: {},
+        max: 20,
+        cost: {
+          wood: 10
+        },
+        population: 10
+      };
+      this.farm = {
+        count: 1,
+        production: {
+          food: 5
+        },
+        stock: {},
+        max: 10,
+        cost: {
+          wood: 10,
+          iron: 10
+        },
+        population: 0
+      };
+      this.barn = {
+        count: 0,
+        production: {},
+        stock: {
+          wood: 10,
+          iron: 10,
+          copper: 10,
+          gold: 10,
+          food: 100
+        },
+        max: 5,
+        cost: {
+          wood: 10,
+          iron: 10
+        },
+        population: 0
+      }
+      this.ironMine = {
+        count: 0,
+        production: {
+          iron: 1
+        },
+        stock: {},
+        max: 3,
+        cost: {
+          wood: 50
+        },
+        population: 0
+      };
+      this.copperMine = {
+        count: 2,
+        production: {
+          copper: 1
+        },
+        stock: {},
+        max: 2,
+        cost: {
+          wood: 50,
+          iron: 50
+        },
+        population: 0
+      };
+      this.goldMine = {
+        count: 0,
+        production: {
+          gold: 1
+        },
+        stock: {},
+        max: 1,
+        cost: {
+          wood: 50,
+          iron: 50,
+          copper: 50
+        },
+        population: 0
+      };
+      this.wonder = {
+        count: 0,
+        production: {},
+        stock: {},
+        max: 1,
+        cost: {
+          wood: 100,
+          iron: 100,
+          copper: 100,
+          gold: 100,
+          food: 100
+        },
+        population: 0
+      };
     },
     _getProduction: function() {
-      var production = {
+      var resources = {
         wood: 0,
         iron: 0,
         copper: 0,
@@ -90,12 +106,12 @@
         food: 0
       };
 
-      this._addProduction(production, this.farm);
-      this._addProduction(production, this.ironMine);
-      this._addProduction(production, this.copperMine);
-      this._addProduction(production, this.goldMine);
+      this._addProduction(resources, this.farm);
+      this._addProduction(resources, this.ironMine);
+      this._addProduction(resources, this.copperMine);
+      this._addProduction(resources, this.goldMine);
 
-      return production;
+      return resources;
     },
     _addProduction(obj, building) {
       if(building.count == 0) {
@@ -118,7 +134,7 @@
       }
     },
     tick: function() {
-      game.stock.add(this._getProduction());
+      game.stock.updateStock(this._getProduction());
     }
   };
 })(window.game = window.game || {}, jQuery);
