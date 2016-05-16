@@ -20,6 +20,11 @@
         game.engine.stop();
       }
     },
+    feed: function() {
+      game.stock.food -= this.count;
+      this.hunger = 0;
+      this.lastFeed = game.engine.infos.tickCount;
+    },
     _hungry: function() {
       if(this.hunger < this.hungerMax) {
         this.hunger++;

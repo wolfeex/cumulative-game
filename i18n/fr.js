@@ -16,6 +16,9 @@
   "buildings-goldmine": "Mine d'or",
   "buildings-wonder": "Merveille",
   "population-title": "Population",
-  "population-people": "Nombre",
-  "population-hunger": "Faim"
+  "population-people": "Personnes",
+  "population-hunger": "Faim",
+  "action-title": "Actions",
+  "action-feed": "Nourrir les gens",
+  "action-feed-btn": "Miam"
 }

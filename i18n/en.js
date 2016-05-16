@@ -17,5 +17,8 @@
   "buildings-wonder": "Wonder",
   "population-title": "Population",
   "population-people": "Count",
-  "population-hunger": "Hunger"
+  "population-hunger": "Hunger",
+  "action-title": "Actions",
+  "action-feed": "Feed people",
+  "action-feed-btn": "Yummy"
 }

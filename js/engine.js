@@ -14,16 +14,17 @@
       this._debug = typeof debug !== 'undefined' ? debug : false;
       this._lang = typeof debug !== 'undefined' ? lang : 'en';
       this._startDate = Date.now();
-      this._renderer.init(this._debug);
-      for(var i=0; i<this._componentList.length; i++) {
-        if(typeof this._componentList[i].init == 'function') {
-          this._componentList[i].init();
+      this._renderer.init(this._debug, function(){
+        for(var i=0; i<this._componentList.length; i++) {
+          if(typeof this._componentList[i].init == 'function') {
+            this._componentList[i].init();
+          }
         }
-      }
-      if(this._loopInterval) {
-        this.stop();
-      }
-      this._loopInterval = setInterval(this._tick.bind(this), 1000);
+        if(this._loopInterval) {
+          this.stop();
+        }
+        this._loopInterval = setInterval(this._tick.bind(this), 1000);
+      }.bind(this));
     },
     stop: function() {
       clearInterval(this._loopInterval);

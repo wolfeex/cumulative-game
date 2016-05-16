@@ -3,12 +3,13 @@
   game.renderer = {
     _debug: false,
     _renderList: [],
-    init: function(debug) {
+    init: function(debug, complete) {
       this._debug = typeof debug !== 'undefined' ? debug : false;
       if(this._debug) {
         $('#wrapper').append($('<section id="debug">').load('tpl/debug.html'));
       }
       $('#wrapper').append($('<section id="main">').load('tpl/main.html', function(){
+        complete();
         this.render();
         this.updateLanguage();
       }.bind(this)));
@@ -36,6 +37,16 @@
           } catch(e) {}
         });
       }
+    },
+    renderComponent(component) {
+      $('#'+ component.IDVIEW).find('[data-bind]').each(function(i, elem) {
+        try {
+          var data = eval($(elem).data('bind'));
+          if(!Number.isNaN(data) && data != Number.POSITIVE_INFINITY && data != Number.NEGATIVE_INFINITY) {
+            $(elem).text(data);
+          }
+        } catch(e) {}
+      });
     },
     debug: function() {
 
