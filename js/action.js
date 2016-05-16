@@ -10,7 +10,7 @@
         this._updateButtons();
       }.bind(this));
     },
-    tick: function() {
+    render: function() {
       this._updateButtons();
     },
     _updateButtons: function() {

@@ -3,6 +3,7 @@
   game.renderer = {
     _debug: false,
     _renderList: [],
+    langFile: null,
     init: function(debug, complete) {
       this._debug = typeof debug !== 'undefined' ? debug : false;
       if(this._debug) {
@@ -28,14 +29,7 @@
       }
 
       for(var i=0; i<this._renderList.length; i++) {
-        $('#'+ this._renderList[i].IDVIEW).find('[data-bind]').each(function(i, elem) {
-          try {
-            var data = eval($(elem).data('bind'));
-            if(!Number.isNaN(data) && data != Number.POSITIVE_INFINITY && data != Number.NEGATIVE_INFINITY) {
-              $(elem).text(data);
-            }
-          } catch(e) {}
-        });
+        this.renderComponent(this._renderList[i]);
       }
     },
     renderComponent(component) {
@@ -47,6 +41,9 @@
           }
         } catch(e) {}
       });
+      if(typeof component.render == 'function') {
+        component.render();
+      }
     },
     debug: function() {
 
@@ -60,12 +57,13 @@
         dataType: 'json',
         async: false,
         cache: false,
+        context: this,
         success: function(data) {
-          langFile = data;
+          this.langFile = data;
 
           $('[data-i18n]').each(function(i, elem) {
-            $(elem).text(langFile[$(elem).data('i18n')]);
-          });
+            $(elem).text(this.langFile[$(elem).data('i18n')]);
+          }.bind(this));
         }
       });
     },

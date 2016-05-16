@@ -20,5 +20,7 @@
   "population-hunger": "Faim",
   "action-title": "Actions",
   "action-feed": "Nourrir les gens",
-  "action-feed-btn": "Miam"
+  "action-feed-btn": "Miam!",
+  "log-title": "Logs",
+  "log-message-feed": "La population a mangé"
 }

@@ -10,6 +10,7 @@
     infos: {
       tickCount: 0
     },
+    TICKDURATION: 1,
     init: function(lang, debug) {
       this._debug = typeof debug !== 'undefined' ? debug : false;
       this._lang = typeof debug !== 'undefined' ? lang : 'en';
@@ -23,7 +24,7 @@
         if(this._loopInterval) {
           this.stop();
         }
-        this._loopInterval = setInterval(this._tick.bind(this), 1000);
+        this._loopInterval = setInterval(this._tick.bind(this), this.TICKDURATION * 1000);
       }.bind(this));
     },
     stop: function() {

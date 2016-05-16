@@ -20,5 +20,7 @@
   "population-hunger": "Hunger",
   "action-title": "Actions",
   "action-feed": "Feed people",
-  "action-feed-btn": "Yummy"
+  "action-feed-btn": "Yummy!",
+  "log-title": "Logs",
+  "log-message-feed": "Feeding population"
 }

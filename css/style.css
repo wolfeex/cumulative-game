@@ -37,15 +37,15 @@ body {
   background-color: #ccc;
 }
 
-.component div {
+.component-table div {
   display: flex;
 }
 
-.component div p:first-child {
+.component-table div p:first-child {
   flex: 1 1 60%;
 }
 
-.component div p:last-child {
+.component-table div p:last-child {
   flex: 1 1 40%;
   text-align: right;
 }

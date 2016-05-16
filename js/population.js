@@ -24,6 +24,7 @@
       game.stock.food -= this.count;
       this.hunger = 0;
       this.lastFeed = game.engine.infos.tickCount;
+      game.log.add(game.renderer.langFile['log-message-feed'])
     },
     _hungry: function() {
       if(this.hunger < this.hungerMax) {

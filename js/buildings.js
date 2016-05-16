@@ -16,7 +16,7 @@
       this.farm = {
         count: 1,
         production: {
-          food: 5
+          food: 2
         },
         stock: {},
         max: 10,
