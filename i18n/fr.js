@@ -22,5 +22,8 @@
   "action-feed": "Nourrir les gens",
   "action-feed-btn": "Miam!",
   "log-title": "Logs",
-  "log-message-feed": "La population a mangé"
+  "log-message-feed": "La population a mangé",
+  "log-message-feed-lose": "Vous avez perdu une personne",
+  "log-message-population-lose": "Vous avez perdu votre dernière personne",
+  "log-message-game-lose": "Vous avez perdu la partie"
 }

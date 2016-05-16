@@ -3,6 +3,7 @@
   game.action = {
     IDVIEW: 'action',
     init: function() {
+      this._disabled = false;
       $('#action-feed-btn').click(function() {
         game.population.feed();
         game.renderer.renderComponent(game.stock);
@@ -14,11 +15,14 @@
       this._updateButtons();
     },
     _updateButtons: function() {
-      if(game.stock.food >= game.population.count) {
+      if(!this._disabled && game.stock.food >= game.population.count) {
         $('#action-feed-btn').prop('disabled', false);
       } else {
         $('#action-feed-btn').prop('disabled', true);
       }
+    },
+    disableAll: function() {
+      this._disabled = true;
     }
   };
 })(window.game = window.game || {}, jQuery);

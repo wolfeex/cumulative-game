@@ -22,5 +22,8 @@
   "action-feed": "Feed people",
   "action-feed-btn": "Yummy!",
   "log-title": "Logs",
-  "log-message-feed": "Feeding population"
+  "log-message-feed": "Feeding population",
+  "log-message-feed-lose": "You losed one person",
+  "log-message-population-lose": "You losed your last person",
+  "log-message-game-lose": "Game Over"
 }

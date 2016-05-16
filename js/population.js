@@ -16,21 +16,27 @@
         this._hungry();
       }
       if(this.count <= 0) {
-        console.log('game losed');
+        game.log.add(game.renderer.langFile['log-message-game-lose']);
         game.engine.stop();
+        game.action.disableAll();
       }
     },
     feed: function() {
       game.stock.food -= this.count;
       this.hunger = 0;
       this.lastFeed = game.engine.infos.tickCount;
-      game.log.add(game.renderer.langFile['log-message-feed'])
+      game.log.add(game.renderer.langFile['log-message-feed']);
     },
     _hungry: function() {
       if(this.hunger < this.hungerMax) {
         this.hunger++;
       } else {
         this._die();
+        if(this.count > 0) {
+          game.log.add(game.renderer.langFile['log-message-feed-lose']);
+        } else {
+          game.log.add(game.renderer.langFile['log-message-population-lose']);
+        }
       }
     },
     _die: function() {
