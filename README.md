@@ -1,9 +1,7 @@
 # cumulative-game
 Incremental Game Prototype
 
-**Implements :**
-- 1 second game loop
-- simple DOM renderer
-- resources stock
-- i18n system
-- debug
+**Wonder Rush Civilization**
+
+It's a simple HTML game where you have to manage and develop your city / country.
+You win when you construct your wonder, and lose if all people is dead.
