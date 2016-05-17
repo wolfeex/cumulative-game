@@ -7,7 +7,7 @@
         count: 0,
         production: {},
         stock: {},
-        max: 20,
+        max: 10,
         cost: {
           wood: 10
         },
@@ -19,10 +19,10 @@
           food: 2
         },
         stock: {},
-        max: 10,
+        max: 4,
         cost: {
-          wood: 10,
-          iron: 10
+          wood: 50,
+          iron: 20
         },
         population: 0
       };
@@ -33,10 +33,10 @@
           wood: 100,
           food: 100
         },
-        max: 5,
+        max: 2,
         cost: {
-          wood: 10,
-          iron: 10
+          wood: 50,
+          iron: 20
         },
         population: 0
       };
@@ -48,10 +48,10 @@
           copper: 100,
           gold: 100
         },
-        max: 5,
+        max: 2,
         cost: {
-          wood: 10,
-          iron: 10
+          wood: 50,
+          iron: 20
         },
         population: 0
       };
@@ -75,8 +75,8 @@
         stock: {},
         max: 2,
         cost: {
-          wood: 50,
-          iron: 50
+          wood: 100,
+          iron: 100
         },
         population: 0
       };
@@ -88,9 +88,9 @@
         stock: {},
         max: 1,
         cost: {
-          wood: 50,
-          iron: 50,
-          copper: 50
+          wood: 200,
+          iron: 200,
+          copper: 200
         },
         population: 0
       };
@@ -100,11 +100,11 @@
         stock: {},
         max: 1,
         cost: {
-          wood: 100,
-          iron: 100,
-          copper: 100,
-          gold: 100,
-          food: 100
+          wood: 300,
+          iron: 300,
+          copper: 300,
+          gold: 300,
+          food: 300
         },
         population: 0
       };
@@ -147,6 +147,12 @@
     },
     tick: function() {
       game.stock.updateStock(this._getProduction());
+    },
+    render: function() {
+      this._updateButtons();
+    },
+    _updateButtons: function() {
+      
     }
   };
 })(window.game = window.game || {}, jQuery);

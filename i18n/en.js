@@ -15,6 +15,7 @@
   "buildings-coppermine": "Copper mine",
   "buildings-goldmine": "Gold mine",
   "buildings-wonder": "Wonder",
+  "buildings-construct-btn": "Construct",
   "population-title": "Population",
   "population-people": "People",
   "population-hunger": "Hunger",
@@ -30,5 +31,8 @@
   "log-message-arrival": "Someone has joined your civilization",
   "log-message-population-lose": "You losed your last person",
   "log-message-game-lose": "Game Over",
-  "log-message-game-win": "You win the game !"
+  "log-message-game-win": "You win the game !",
+  "footer-restart": "Restart",
+  "footer-language-english": "English",
+  "footer-language-french": "French"
 }

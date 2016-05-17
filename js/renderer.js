@@ -7,18 +7,19 @@
     init: function(debug, complete) {
       this._debug = typeof debug !== 'undefined' ? debug : false;
       $('#wrapper').append($('<section id="main">').load('tpl/main.html', function(){
-        complete();
-        this.updateLanguage();
-        this.render();
+        $('#wrapper').append($('<footer id="footer">').load('tpl/footer.html', function() {
+          complete();
+          this.updateLanguage();
+          this.render();
+        }.bind(this)));
       }.bind(this)));
-      $('#wrapper').append($('<footer>').load('tpl/footer.html'));
     },
     render: function() {
       for(var i=0; i<this._renderList.length; i++) {
         this.renderComponent(this._renderList[i]);
       }
     },
-    renderComponent(component) {
+    renderComponent: function(component) {
       $('#'+ component.IDVIEW).find('[data-bind]').each(function(i, elem) {
         try {
           var data = eval($(elem).data('bind'));

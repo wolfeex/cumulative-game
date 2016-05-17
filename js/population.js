@@ -61,6 +61,7 @@
       };
       game.stock.updateStock(resources);
       this.endHunt = game.engine.infos.tickCount + this.HUNTDURATION;
+      this.endChopWood = game.engine.infos.tickCount + this.HUNTDURATION;
       game.log.add(game.renderer.langFile['log-message-hunt']);
     },
     _chopWood: function() {
@@ -69,6 +70,7 @@
       };
       game.stock.updateStock(resources);
       this.endChopWood = game.engine.infos.tickCount + this.CHOPWOODDURATION;
+      this.endHunt = game.engine.infos.tickCount + this.CHOPWOODDURATION;
       game.log.add(game.renderer.langFile['log-message-chopwood']);
     },
     _arrival: function() {
