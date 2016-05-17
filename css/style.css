@@ -26,7 +26,7 @@ body {
 }
 
 .component {
-  width: 200px;
+  width: 400px;
   padding: 10px;
   border:1px #333 solid;
 }
@@ -37,15 +37,47 @@ body {
   background-color: #ccc;
 }
 
-.component-table div {
+.component div p {
+  line-height: 2em;
+}
+
+.component div button {
+  padding: 0px;
+  font-size: 0.8em;
+  background-color: white;
+  border: 1px #333 solid;
+  color: #333;
+  cursor: pointer;
+}
+
+.component div button[disabled=disabled],
+.component div button:disabled {
+  background-color: #ddd;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.component-table-2,
+.component-table-3 {
   display: flex;
 }
 
-.component-table div p:first-child {
+.component-table-2 p:first-child,
+.component-table-3 p:first-child {
   flex: 1 1 60%;
 }
 
-.component-table div p:last-child {
+.component-table-3 p:nth-child(2) {
+  flex: 1 1 20%;
+  text-align: left;
+}
+
+.component-table-2 p:last-child {
   flex: 1 1 40%;
+  text-align: right;
+}
+
+.component-table-3 p:last-child {
+  flex: 1 1 20%;
   text-align: right;
 }

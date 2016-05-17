@@ -12,14 +12,14 @@
       this.lastFeed = 0;
       this.timeHunt = 0;
 
-      $('#action-feed-btn').click(function() {
+      $('#population-feed-btn').click(function() {
         this._feed();
         game.renderer.renderComponent(game.stock);
         game.renderer.renderComponent(game.population);
         this._updateButtons();
       }.bind(this));
 
-      $('#action-hunt-btn').click(function() {
+      $('#population-hunt-btn').click(function() {
         this._hunt();
         game.renderer.renderComponent(game.stock);
         this._updateButtons();
@@ -67,15 +67,15 @@
     },
     _updateButtons: function() {
       if(game.stock.food >= game.population.count) {
-        $('#action-feed-btn').prop('disabled', false);
+        $('#population-feed-btn').prop('disabled', false);
       } else {
-        $('#action-feed-btn').prop('disabled', true);
+        $('#population-feed-btn').prop('disabled', true);
       }
 
       if(this.timeHunt <= game.engine.infos.tickCount) {
-        $('#action-hunt-btn').prop('disabled', false);
+        $('#population-hunt-btn').prop('disabled', false);
       } else {
-        $('#action-hunt-btn').prop('disabled', true);
+        $('#population-hunt-btn').prop('disabled', true);
       }
     }
   };
