@@ -1,119 +1,127 @@
-<h1 data-i18n="title"></h1>
+<div class="column">
 
-<article id="stock" class="component">
-  <h4 data-i18n="stock-title"></h4>
-  <div class="component-table-2">
-    <p data-i18n="stock-wood"></p>
-    <p data-bind="game.stock.wood + ' / ' + game.stock.woodMax"></p>
-  </div>
-  <div class="component-table-2">
-    <p data-i18n="stock-iron"></p>
-    <p data-bind="game.stock.iron + ' / ' + game.stock.ironMax"></p>
-  </div>
-  <div class="component-table-2">
-    <p data-i18n="stock-copper"></p>
-    <p data-bind="game.stock.copper + ' / ' + game.stock.copperMax"></p>
-  </div>
-  <div class="component-table-2">
-    <p data-i18n="stock-gold"></p>
-    <p data-bind="game.stock.gold + ' / ' + game.stock.goldMax"></p>
-  </div>
-  <div class="component-table-2">
-    <p data-i18n="stock-food"></p>
-    <p data-bind="game.stock.food + ' / ' + game.stock.foodMax"></p>
-  </div>
-</article>
+  <h1 data-i18n="title"></h1>
 
-<article id="buildings" class="component">
-  <h4 data-i18n="buildings-title"></h4>
-  <div class="component-table-3">
-    <p data-i18n="buildings-house"></p>
-    <p>
-      <button id="buildings-house-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.house.count + ' / ' + game.buildings.house.max"></p>
-  </div>
-  <div class="component-table-3">
-    <p data-i18n="buildings-farm"></p>
-    <p>
-      <button id="buildings-farm-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.farm.count + ' / ' + game.buildings.farm.max"></p>
-  </div>
+  <article id="stock" class="component">
+    <h4 data-i18n="stock-title"></h4>
+    <div class="component-table-2">
+      <p data-i18n="stock-wood"></p>
+      <p data-bind="game.stock.wood + ' / ' + game.stock.woodMax"></p>
+    </div>
+    <div class="component-table-2">
+      <p data-i18n="stock-iron"></p>
+      <p data-bind="game.stock.iron + ' / ' + game.stock.ironMax"></p>
+    </div>
+    <div class="component-table-2">
+      <p data-i18n="stock-copper"></p>
+      <p data-bind="game.stock.copper + ' / ' + game.stock.copperMax"></p>
+    </div>
+    <div class="component-table-2">
+      <p data-i18n="stock-gold"></p>
+      <p data-bind="game.stock.gold + ' / ' + game.stock.goldMax"></p>
+    </div>
+    <div class="component-table-2">
+      <p data-i18n="stock-food"></p>
+      <p data-bind="game.stock.food + ' / ' + game.stock.foodMax"></p>
+    </div>
+  </article>
 
-  <div class="component-table-3">
-    <p data-i18n="buildings-sawmill"></p>
-    <p>
-      <button id="buildings-sawmill-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.sawmill.count + ' / ' + game.buildings.sawmill.max"></p>
-  </div>
+  <article id="buildings" class="component">
+    <h4 data-i18n="buildings-title"></h4>
+    <div class="component-table-3">
+      <p data-i18n="buildings-house"></p>
+      <p>
+        <button id="buildings-house-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.house.count + ' / ' + game.buildings.house.max"></p>
+    </div>
+    <div class="component-table-3">
+      <p data-i18n="buildings-farm"></p>
+      <p>
+        <button id="buildings-farm-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.farm.count + ' / ' + game.buildings.farm.max"></p>
+    </div>
 
-  <div class="component-table-3">
-    <p data-i18n="buildings-barn"></p>
-    <p>
-      <button id="buildings-barn-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.barn.count + ' / ' + game.buildings.barn.max"></p>
-  </div>
-  <div class="component-table-3">
-    <p data-i18n="buildings-storehouse"></p>
-    <p>
-      <button id="buildings-storehouse-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.storehouse.count + ' / ' + game.buildings.storehouse.max"></p>
-  </div>
-  <div class="component-table-3">
-    <p data-i18n="buildings-ironmine"></p>
-    <p>
-      <button id="buildings-ironmine-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.ironMine.count + ' / ' + game.buildings.ironMine.max"></p>
-  </div>
-  <div class="component-table-3">
-    <p data-i18n="buildings-coppermine"></p>
-    <p>
-      <button id="buildings-coppermine-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.copperMine.count + ' / ' + game.buildings.copperMine.max"></p>
-  </div>
-  <div class="component-table-3">
-    <p data-i18n="buildings-goldmine"></p>
-    <p>
-      <button id="buildings-goldmine-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.goldMine.count + ' / ' + game.buildings.goldMine.max"></p>
-  </div>
-  <div class="component-table-3">
-    <p data-i18n="buildings-wonder"></p>
-    <p>
-      <button id="buildings-wonder-btn" data-i18n="buildings-construct-btn"></button>
-    </p>
-    <p data-bind="game.buildings.wonder.count + ' / ' + game.buildings.wonder.max"></p>
-  </div>
-</article>
+    <div class="component-table-3">
+      <p data-i18n="buildings-sawmill"></p>
+      <p>
+        <button id="buildings-sawmill-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.sawmill.count + ' / ' + game.buildings.sawmill.max"></p>
+    </div>
 
-<article id="population" class="component">
-  <h4 data-i18n="population-title"></h4>
-  <div class="component-table-3">
-    <p data-i18n="population-people"></p>
-    <p>
-      <button id="population-hunt-btn" data-i18n="population-hunt-btn"></button><br>
-      <button id="population-chopwood-btn" data-i18n="population-chopwood-btn"></button><br>
-      <button id="population-arrival-btn" data-i18n="population-arrival-btn"></button>
-    </p>
-    <p data-bind="game.population.count + ' / ' + game.population.max"></p>
-  </div class="component-table-2">
-  <div class="component-table-3">
-    <p data-i18n="population-hunger"></p>
-    <p>
-      <button id="population-feed-btn" data-i18n="population-feed-btn"></button>
-    </p>
-    <p data-bind="game.population.hunger + ' / ' + game.population.hungerMax"></p>
-  </div>
-</article>
+    <div class="component-table-3">
+      <p data-i18n="buildings-barn"></p>
+      <p>
+        <button id="buildings-barn-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.barn.count + ' / ' + game.buildings.barn.max"></p>
+    </div>
+    <div class="component-table-3">
+      <p data-i18n="buildings-storehouse"></p>
+      <p>
+        <button id="buildings-storehouse-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.storehouse.count + ' / ' + game.buildings.storehouse.max"></p>
+    </div>
+    <div class="component-table-3">
+      <p data-i18n="buildings-ironmine"></p>
+      <p>
+        <button id="buildings-ironmine-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.ironMine.count + ' / ' + game.buildings.ironMine.max"></p>
+    </div>
+    <div class="component-table-3">
+      <p data-i18n="buildings-coppermine"></p>
+      <p>
+        <button id="buildings-coppermine-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.copperMine.count + ' / ' + game.buildings.copperMine.max"></p>
+    </div>
+    <div class="component-table-3">
+      <p data-i18n="buildings-goldmine"></p>
+      <p>
+        <button id="buildings-goldmine-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.goldMine.count + ' / ' + game.buildings.goldMine.max"></p>
+    </div>
+    <div class="component-table-3">
+      <p data-i18n="buildings-wonder"></p>
+      <p>
+        <button id="buildings-wonder-btn" data-i18n="buildings-construct-btn"></button>
+      </p>
+      <p data-bind="game.buildings.wonder.count + ' / ' + game.buildings.wonder.max"></p>
+    </div>
+  </article>
 
-<article id="log" class="component">
-  <h4 data-i18n="log-title"></h4>
-  <div></div>
-</article>
+  <article id="population" class="component">
+    <h4 data-i18n="population-title"></h4>
+    <div class="component-table-3">
+      <p data-i18n="population-people"></p>
+      <p>
+        <button id="population-hunt-btn" data-i18n="population-hunt-btn"></button><br>
+        <button id="population-chopwood-btn" data-i18n="population-chopwood-btn"></button><br>
+        <button id="population-arrival-btn" data-i18n="population-arrival-btn"></button>
+      </p>
+      <p data-bind="game.population.count + ' / ' + game.population.max"></p>
+    </div class="component-table-2">
+    <div class="component-table-3">
+      <p data-i18n="population-hunger"></p>
+      <p>
+        <button id="population-feed-btn" data-i18n="population-feed-btn"></button>
+      </p>
+      <p data-bind="game.population.hunger + ' / ' + game.population.hungerMax"></p>
+    </div>
+  </article>
+
+</div>
+
+<div class="column">
+
+  <article id="log" class="component">
+    <h4 data-i18n="log-title"></h4>
+    <div></div>
+  </article>
+
+</div>

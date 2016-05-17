@@ -12,16 +12,38 @@ body {
   color: #333;
 }
 
+#wrapper {
+  margin: auto;
+  max-width: 800px;
+  min-width: 480px;
+}
+
 #wrapper footer {
   position: fixed;
   bottom: 0;
   right: 0;
 }
 
+#main {
+	display: flex;
+  padding: 0.2em;
+}
+
+#wrapper .column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#main h1 {
+  text-align: center;
+  margin: 0.4em;
+}
+
 .component {
-  width: 500px;
   padding: 10px;
   border:1px #333 solid;
+  margin: 0.4em;
 }
 
 .component h4 {
@@ -31,11 +53,11 @@ body {
 }
 
 .component div p {
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 .component div button {
-  padding: 0px;
+  padding: 2px;
   font-size: 0.8em;
   background-color: white;
   border: 1px #333 solid;
@@ -57,25 +79,28 @@ body {
 
 .component-table-2 p:first-child,
 .component-table-3 p:first-child {
-  flex: 1 1 60%;
+  flex: 1 1 50%;
 }
 
 .component-table-3 p:nth-child(2) {
-  flex: 1 1 20%;
+  flex: 1 1 25%;
   text-align: left;
 }
 
 .component-table-2 p:last-child {
-  flex: 1 1 40%;
+  flex: 1 1 50%;
   text-align: right;
 }
 
 .component-table-3 p:last-child {
-  flex: 1 1 20%;
+  flex: 1 1 25%;
   text-align: right;
 }
 
+#log {
+  flex: 1;
+}
+
 #log div {
-  height: 10em;
   overflow: auto;
 }
