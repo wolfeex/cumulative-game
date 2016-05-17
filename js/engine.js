@@ -8,10 +8,13 @@
     _componentList: [],
     _renderer: null,
     infos: {
-      tickCount: 0
+      tickCount: null,
+      end: null
     },
     TICKDURATION: 1,
     init: function(lang, debug) {
+      this.infos.tickCount = 0;
+      this.infos.end = false;
       this._debug = typeof debug !== 'undefined' ? debug : false;
       this._lang = typeof debug !== 'undefined' ? lang : 'en';
       this._startDate = Date.now();
@@ -30,6 +33,7 @@
     stop: function() {
       clearInterval(this._loopInterval);
       this._loopInterval = null;
+      this.infos.end = true;
     },
     /* Game loop function */
     _tick: function() {

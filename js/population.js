@@ -6,9 +6,16 @@
       this.count = 1;
       this.max = 10;
       this.hunger = 0;
-      this.hungerMax = 10;
-      this.hungerCheck = 5;
+      this.hungerMax = 5;
+      this.hungerCheck = 2;
       this.lastFeed = 0;
+
+      $('#action-feed-btn').click(function() {
+        this._feed();
+        game.renderer.renderComponent(game.stock);
+        game.renderer.renderComponent(game.population);
+        this._updateButtons();
+      }.bind(this));
     },
     tick: function() {
       var currentTick = game.engine.infos.tickCount;
@@ -18,10 +25,9 @@
       if(this.count <= 0) {
         game.log.add(game.renderer.langFile['log-message-game-lose']);
         game.engine.stop();
-        game.action.disableAll();
       }
     },
-    feed: function() {
+    _feed: function() {
       game.stock.food -= this.count;
       this.hunger = 0;
       this.lastFeed = game.engine.infos.tickCount;
@@ -42,6 +48,16 @@
     _die: function() {
       if(this.count > 0) {
         this.count--;
+      }
+    },
+    render: function() {
+      this._updateButtons();
+    },
+    _updateButtons: function() {
+      if(!game.engine.infos.end && game.stock.food >= game.population.count) {
+        $('#action-feed-btn').prop('disabled', false);
+      } else {
+        $('#action-feed-btn').prop('disabled', true);
       }
     }
   };
