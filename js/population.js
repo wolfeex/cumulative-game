@@ -10,7 +10,7 @@
       this.hungerMax = 10;
       this.hungerCheck = 5;
       this.lastFeed = 0;
-      this.timeHunt = 0;
+      this.endHunt = 0;
 
       $('#population-feed-btn').click(function() {
         this._feed();
@@ -42,7 +42,7 @@
         food: this.count * 2
       };
       game.stock.updateStock(resources);
-      this.timeHunt = game.engine.infos.tickCount + 1 + this.HUNTDURATION;
+      this.endHunt = game.engine.infos.tickCount + this.HUNTDURATION;
       game.log.add(game.renderer.langFile['log-message-hunt']);
     },
     _hungry: function() {
@@ -72,9 +72,14 @@
         $('#population-feed-btn').prop('disabled', true);
       }
 
-      if(this.timeHunt <= game.engine.infos.tickCount) {
+      if(this.endHunt <= game.engine.infos.tickCount) {
+        $('#population-hunt-btn').find('span').remove();
         $('#population-hunt-btn').prop('disabled', false);
       } else {
+        if($('#population-hunt-btn').find('span').length == 0) {
+          $('#population-hunt-btn').append('<span></span>');
+        }
+        $('#population-hunt-btn').find('span').text(' (' + (this.endHunt - game.engine.infos.tickCount) + ')');
         $('#population-hunt-btn').prop('disabled', true);
       }
     }
