@@ -8,8 +8,8 @@
       this._debug = typeof debug !== 'undefined' ? debug : false;
       $('#wrapper').append($('<section id="main">').load('tpl/main.html', function(){
         complete();
-        this.render();
         this.updateLanguage();
+        this.render();
       }.bind(this)));
       $('#wrapper').append($('<footer>').load('tpl/footer.html'));
     },

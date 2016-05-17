@@ -1,5 +1,5 @@
 {
-  "title": "Wonder Rush Civilisation",
+  "title": "Wonder Rush Civilization",
   "stock-title": "Stock",
   "stock-wood": "Bois",
   "stock-iron": "Fer",
@@ -20,10 +20,14 @@
   "population-hunger": "Faim",
   "population-feed-btn": "Nourrir",
   "population-hunt-btn": "Chasser",
+  "population-chopwood-btn": "Couper bois",
+  "population-arrival-btn": "Arrivée",
   "log-title": "Logs",
   "log-message-feed": "La population a mangé",
   "log-message-feed-lose": "Vous avez perdu une personne",
   "log-message-hunt": "La chasse est déclarée !",
+  "log-message-chopwood": "Allons couper du bois !",
+  "log-message-arrival": "Une personne a rejoint votre civilisation",
   "log-message-population-lose": "Vous avez perdu votre dernière personne",
   "log-message-game-lose": "Vous avez perdu la partie",
   "log-message-game-win": "Vous avez gagné la partie !"
