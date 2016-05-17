@@ -30,6 +30,44 @@
       if(typeof resources.food != 'undefined' && resources.food != 0) {
         this.food = ((this.food+resources.food>this.foodMax)?this.foodMax:this.food+resources.food);
       }
+    },
+    updateMaxStock: function(stock) {
+      if(typeof stock.wood != 'undefined' && stock.wood > 0) {
+        this.woodMax += stock.wood;
+      }
+      if(typeof stock.iron != 'undefined' && stock.iron > 0) {
+        this.ironMax += stock.iron;
+      }
+      if(typeof stock.copper != 'undefined' && stock.copper > 0) {
+        this.copperMax += stock.copper;
+      }
+      if(typeof stock.gold != 'undefined' && stock.gold > 0) {
+        this.goldMax += stock.gold;
+      }
+      if(typeof stock.food != 'undefined' && stock.food > 0) {
+        this.foodMax += stock.food;
+      }
+    },
+    checkResources: function(resources) {
+      var result = true;
+
+      if(typeof resources.wood != 'undefined' && resources.wood > this.wood) {
+        result = false;
+      }
+      if(typeof resources.iron != 'undefined' && resources.iron > this.iron) {
+        result = false;
+      }
+      if(typeof resources.copper != 'undefined' && resources.copper > this.copper) {
+        result = false;
+      }
+      if(typeof resources.gold != 'undefined' && resources.gold > this.gold) {
+        result = false;
+      }
+      if(typeof resources.food != 'undefined' && resources.food > this.food) {
+        result = false;
+      }
+
+      return result;
     }
   };
 })(window.game = window.game || {}, jQuery);

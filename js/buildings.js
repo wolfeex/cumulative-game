@@ -121,6 +121,41 @@
         },
         population: 0
       };
+
+      $('#buildings-house-btn').click(function() {
+        this._construct(this.house);
+        this._updateButtons();
+      }.bind(this));
+    },
+    _construct: function(building) {
+      building.count++;
+
+      var resources = {
+        wood: 0,
+        iron: 0,
+        copper: 0,
+        gold: 0,
+        food: 0
+      };
+
+      var stock = {
+        wood: 0,
+        iron: 0,
+        copper: 0,
+        gold: 0,
+        food: 0
+      };
+
+      this._addResources(resources, building.cost, true);
+      this._addResources(resources, building.stock);
+      game.stock.updateStock(resources);
+      game.stock.updateMaxStock(stock);
+      game.renderer.renderComponent(game.stock);
+
+      if(building.population > 0) {
+        game.population.addMaxPopulation(building.population);
+        game.renderer.renderComponent(game.population);
+      }
     },
     _getProduction: function() {
       var resources = {
@@ -132,13 +167,34 @@
       };
 
       this._addProduction(resources, this.farm);
+      this._addProduction(resources, this.sawmill);
       this._addProduction(resources, this.ironMine);
       this._addProduction(resources, this.copperMine);
       this._addProduction(resources, this.goldMine);
 
       return resources;
     },
-    _addProduction(obj, building) {
+    _addResources: function(obj, resources, reverse) {
+      if(typeof resources.wood == 'undefined') {
+        reverse = false;
+      }
+      if(typeof resources.wood != 'undefined' && resources.wood > 0) {
+        obj.wood += resources.wood * (reverse?-1:1);
+      }
+      if(typeof resources.iron != 'undefined' && resources.iron > 0) {
+        obj.iron += resources.iron * (reverse?-1:1);
+      }
+      if(typeof resources.copper != 'undefined' && resources.copper > 0) {
+        obj.copper += resources.copper * (reverse?-1:1);
+      }
+      if(typeof resources.gold != 'undefined' && resources.gold > 0) {
+        obj.gold += resources.gold * (reverse?-1:1);
+      }
+      if(typeof resources.food != 'undefined' && resources.food > 0) {
+        obj.food += resources.food * (reverse?-1:1);
+      }
+    },
+    _addProduction: function(obj, building) {
       if(building.count == 0) {
         return;
       }
@@ -165,7 +221,11 @@
       this._updateButtons();
     },
     _updateButtons: function() {
-
+      if(this.house.count < this.house.max && game.stock.checkResources(this.house.cost)) {
+        $('#buildings-house-btn').prop('disabled', false);
+      } else {
+        $('#buildings-house-btn').prop('disabled', true);
+      }
     }
   };
 })(window.game = window.game || {}, jQuery);

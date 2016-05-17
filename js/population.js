@@ -47,6 +47,9 @@
         this._hungry();
       }
     },
+    addMaxPopulation: function(value) {
+      this.max += value;
+    },
     _feed: function() {
       if(game.stock.food >= this.count) {
         game.stock.food -= this.count;
