@@ -1,5 +1,5 @@
 {
-  "title": "Jeu Incrémental",
+  "title": "Wonder Rush Civilisation",
   "stock-title": "Stock",
   "stock-wood": "Bois",
   "stock-iron": "Fer",

@@ -18,13 +18,6 @@ body {
   right: 0;
 }
 
-#debug {
-  padding: 10px;
-  background-color: #555;
-  border-bottom: 1px #333 solid;
-  color: #fff;
-}
-
 .component {
   width: 400px;
   padding: 10px;
@@ -80,4 +73,9 @@ body {
 .component-table-3 p:last-child {
   flex: 1 1 20%;
   text-align: right;
+}
+
+#log div {
+  height: 10em;
+  overflow: auto;
 }
