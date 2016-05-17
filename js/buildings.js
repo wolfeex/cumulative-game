@@ -14,7 +14,7 @@
         population: 10
       };
       this.farm = {
-        count: 1,
+        count: 0,
         production: {
           food: 2
         },
@@ -68,7 +68,7 @@
         population: 0
       };
       this.copperMine = {
-        count: 2,
+        count: 0,
         production: {
           copper: 1
         },

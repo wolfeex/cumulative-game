@@ -74,6 +74,11 @@
       for(var i = this._renderList.length-1; i>=0; i--){
         if (this._renderList[i] === obj) this._renderList.splice(i, 1);
       }
+    },
+    disableAllButtons: function() {
+      $('button').each(function(i, elem) {
+        $(elem).prop('disabled', true);
+      });
     }
   }
 })(window.game = window.game || {}, jQuery);

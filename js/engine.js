@@ -8,13 +8,11 @@
     _componentList: [],
     _renderer: null,
     infos: {
-      tickCount: null,
-      end: null
+      tickCount: null
     },
     TICKDURATION: 1,
     init: function(lang, debug) {
       this.infos.tickCount = 0;
-      this.infos.end = false;
       this._debug = typeof debug !== 'undefined' ? debug : false;
       this._lang = typeof debug !== 'undefined' ? lang : 'en';
       this._startDate = Date.now();
@@ -25,15 +23,15 @@
           }
         }
         if(this._loopInterval) {
-          this.stop();
+          this._stop();
         }
         this._loopInterval = setInterval(this._tick.bind(this), this.TICKDURATION * 1000);
       }.bind(this));
     },
-    stop: function() {
+    _stop: function() {
       clearInterval(this._loopInterval);
       this._loopInterval = null;
-      this.infos.end = true;
+      this._renderer.disableAllButtons();
     },
     /* Game loop function */
     _tick: function() {
@@ -44,6 +42,9 @@
         }
       }
       this._render();
+      if(game.check()) {
+        this._stop();
+      }
     },
     _render: function() {
       this._renderer.render();

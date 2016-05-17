@@ -18,12 +18,15 @@
   "population-title": "Population",
   "population-people": "Count",
   "population-hunger": "Hunger",
-  "action-title": "Actions",
   "action-feed": "Feed people",
   "action-feed-btn": "Yummy!",
+  "action-hunt": "Go hunt",
+  "action-hunt-btn": "Groar!",
   "log-title": "Logs",
   "log-message-feed": "Feeding population",
   "log-message-feed-lose": "You losed one person",
+  "log-message-hunt": "Going to hunt !",
   "log-message-population-lose": "You losed your last person",
-  "log-message-game-lose": "Game Over"
+  "log-message-game-lose": "Game Over",
+  "log-message-game-win": "You win the game !"
 }
