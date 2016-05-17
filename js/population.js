@@ -4,7 +4,7 @@
     IDVIEW: 'population',
     HUNTDURATION: 20,
     CHOPWOODDURATION: 20,
-    ARRIVALDURATION: 50,
+    ARRIVALDURATION: 30,
     init: function() {
       this.count = 1;
       this.max = 10;

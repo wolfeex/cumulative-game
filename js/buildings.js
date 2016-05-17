@@ -7,7 +7,7 @@
         count: 0,
         production: {},
         stock: {},
-        max: 10,
+        max: 6,
         cost: {
           wood: 10
         },
@@ -150,6 +150,7 @@
       this._addResources(resources, building.stock);
       game.stock.updateStock(resources);
       game.stock.updateMaxStock(stock);
+      game.renderer.renderComponent(game.buildings);
       game.renderer.renderComponent(game.stock);
 
       if(building.population > 0) {
