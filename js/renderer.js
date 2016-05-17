@@ -6,9 +6,6 @@
     langFile: null,
     init: function(debug, complete) {
       this._debug = typeof debug !== 'undefined' ? debug : false;
-      if(this._debug) {
-        $('#wrapper').append($('<section id="debug">').load('tpl/debug.html'));
-      }
       $('#wrapper').append($('<section id="main">').load('tpl/main.html', function(){
         complete();
         this.render();
@@ -17,17 +14,6 @@
       $('#wrapper').append($('<footer>').load('tpl/footer.html'));
     },
     render: function() {
-      if(this._debug) {
-        $('#debug').find('[data-bind]').each(function(i, elem) {
-          try {
-            var data = eval($(elem).data('bind'));
-            if(!Number.isNaN(data) && data != Number.POSITIVE_INFINITY && data != Number.NEGATIVE_INFINITY) {
-              $(elem).text(data);
-            }
-          } catch(e) {}
-        });
-      }
-
       for(var i=0; i<this._renderList.length; i++) {
         this.renderComponent(this._renderList[i]);
       }
@@ -76,7 +62,7 @@
       }
     },
     disableAllButtons: function() {
-      $('button').each(function(i, elem) {
+      $('#main button').each(function(i, elem) {
         $(elem).prop('disabled', true);
       });
     }
