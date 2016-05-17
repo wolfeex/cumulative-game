@@ -65,6 +65,7 @@
     disableAllButtons: function() {
       $('#main button').each(function(i, elem) {
         $(elem).prop('disabled', true);
+        $(elem).unbind('click');
       });
     }
   }
