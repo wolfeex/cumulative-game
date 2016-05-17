@@ -17,13 +17,13 @@
       this._lang = typeof debug !== 'undefined' ? lang : 'en';
       this._startDate = Date.now();
       this._renderer.init(this._debug, function(){
+        if(this._loopInterval) {
+          this._stop();
+        }
         for(var i=0; i<this._componentList.length; i++) {
           if(typeof this._componentList[i].init == 'function') {
             this._componentList[i].init();
           }
-        }
-        if(this._loopInterval) {
-          this._stop();
         }
         this._loopInterval = setInterval(this._tick.bind(this), this.TICKDURATION * 1000);
       }.bind(this));

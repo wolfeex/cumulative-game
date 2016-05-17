@@ -6,11 +6,20 @@
     langFile: null,
     init: function(debug, complete) {
       this._debug = typeof debug !== 'undefined' ? debug : false;
+
+      if($('#wrapper #main').length) {
+        $('#wrapper').empty();
+      }
+
       $('#wrapper').append($('<section id="main">').load('tpl/main.html', function(){
         $('#wrapper').append($('<footer id="footer">').load('tpl/footer.html', function() {
-          complete();
-          this.updateLanguage();
-          this.render();
+          var request = this.updateLanguage();
+
+          request.done(function(){
+            complete();
+            this.render();
+          }.bind(this));
+
         }.bind(this)));
       }.bind(this)));
     },
@@ -38,11 +47,10 @@
     updateLanguage: function() {
       var lang = game.engine.getLanguage();
 
-      $.ajax({
+      return $.ajax({
         type: 'GET',
         url: 'i18n/' + lang + '.js',
         dataType: 'json',
-        async: false,
         cache: false,
         context: this,
         success: function(data) {
@@ -63,7 +71,7 @@
       }
     },
     disableAllButtons: function() {
-      $('#main button').each(function(i, elem) {
+      $('#main button').each(function(i, elem) {console.log('disable');
         $(elem).prop('disabled', true);
         $(elem).unbind('click');
       });

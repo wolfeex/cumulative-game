@@ -9,6 +9,7 @@
   "buildings-title": "Buildings",
   "buildings-house": "House",
   "buildings-farm": "Farm",
+  "buildings-sawmill": "Sawmill",
   "buildings-barn": "Barn",
   "buildings-storehouse": "Storehouse",
   "buildings-ironmine": "Iron mine",

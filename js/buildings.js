@@ -26,6 +26,19 @@
         },
         population: 0
       };
+      this.sawmill = {
+        count: 0,
+        production: {
+          wood: 2
+        },
+        stock: {},
+        max: 2,
+        cost: {
+          wood: 50,
+          iron: 20
+        },
+        population: 0
+      };
       this.barn = {
         count: 0,
         production: {},
@@ -152,7 +165,7 @@
       this._updateButtons();
     },
     _updateButtons: function() {
-      
+
     }
   };
 })(window.game = window.game || {}, jQuery);

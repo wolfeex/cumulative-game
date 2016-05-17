@@ -9,6 +9,7 @@
   "buildings-title": "Bâtiments",
   "buildings-house": "Maison",
   "buildings-farm": "Ferme",
+  "buildings-sawmill": "Scierie",
   "buildings-barn": "Grange",
   "buildings-storehouse": "Entrepôt",
   "buildings-ironmine": "Mine de fer",
