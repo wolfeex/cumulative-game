@@ -33,7 +33,5 @@
   "log-message-population-lose": "Vous avez perdu votre dernière personne",
   "log-message-game-lose": "Vous avez perdu la partie",
   "log-message-game-win": "Vous avez gagné la partie !",
-  "footer-restart": "Recommencer",
-  "footer-language-english": "Anglais",
-  "footer-language-french": "Français"
+  "footer-restart": "Recommencer"
 }

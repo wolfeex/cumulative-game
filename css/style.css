@@ -14,8 +14,7 @@ body {
 
 #wrapper {
   margin: auto;
-  max-width: 800px;
-  min-width: 480px;
+  width: 800px;
 }
 
 #wrapper footer {
@@ -84,7 +83,7 @@ body {
 }
 
 .component-table-3 p:nth-child(2) {
-  flex: 1 1 25%;
+  flex: 1 1 30%;
   text-align: left;
 }
 
@@ -94,7 +93,7 @@ body {
 }
 
 .component-table-3 p:last-child {
-  flex: 1 1 25%;
+  flex: 1 1 20%;
   text-align: right;
 }
 
