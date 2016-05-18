@@ -33,6 +33,7 @@ body {
   width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 #main h1 {
@@ -98,9 +99,10 @@ body {
 }
 
 #log {
-  flex: 1;
+  height: 620px;
 }
 
 #log div {
-  overflow: auto;
+  height: 570px;
+  overflow-y: scroll;
 }
