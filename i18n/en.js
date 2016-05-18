@@ -33,5 +33,8 @@
   "log-message-population-lose": "You losed your last person",
   "log-message-game-lose": "Game Over",
   "log-message-game-win": "You win the game !",
-  "footer-restart": "Restart"
+  "footer-restart": "Restart",
+  "footer-speed-slow": "Slow",
+  "footer-speed-medium": "Medium",
+  "footer-speed-fast": "Fast"
 }

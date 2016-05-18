@@ -1,3 +1,5 @@
-<button onclick="game.engine.init()" data-i18n="footer-restart"></button>
+<button onclick="game.engine.init(game.engine.getLanguage())" data-i18n="footer-restart"></button>
+<select id="selectSpeed" onchange="game.footer.changeSpeed()">
+</select>
 <select id="selectLanguage" onchange="game.footer.changeLanguage()">
 </select>

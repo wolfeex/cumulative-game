@@ -14,7 +14,7 @@
     init: function(lang, debug) {
       this.infos.tickCount = 0;
       this._debug = typeof debug !== 'undefined' ? debug : false;
-      this._lang = typeof debug !== 'undefined' ? lang : 'en';
+      this._lang = typeof lang !== 'undefined' ? lang : 'en';
       this._startDate = Date.now();
       this._renderer.init(this._debug, function(){
         if(this._loopInterval) {
@@ -27,6 +27,13 @@
         }
         this._loopInterval = setInterval(this._tick.bind(this), this.TICKDURATION * 1000);
       }.bind(this));
+    },
+    setSpeed: function(interval) {
+      if(this._loopInterval) {
+        clearInterval(this._loopInterval);
+        this.TICKDURATION = interval;
+        this._loopInterval = setInterval(this._tick.bind(this), this.TICKDURATION * 1000);
+      };
     },
     _stop: function() {
       clearInterval(this._loopInterval);
