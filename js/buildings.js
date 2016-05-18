@@ -21,8 +21,7 @@
         stock: {},
         max: 4,
         cost: {
-          wood: 50,
-          iron: 20
+          wood: 50
         },
         population: 0
       };
@@ -34,8 +33,7 @@
         stock: {},
         max: 2,
         cost: {
-          wood: 50,
-          iron: 20
+          wood: 50
         },
         population: 0
       };
@@ -124,6 +122,16 @@
 
       $('#buildings-house-btn').click(function() {
         this._construct(this.house);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-farm-btn').click(function() {
+        this._construct(this.farm);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-sawmill-btn').click(function() {
+        this._construct(this.sawmill);
         this._updateButtons();
       }.bind(this));
     },
@@ -226,6 +234,18 @@
         $('#buildings-house-btn').prop('disabled', false);
       } else {
         $('#buildings-house-btn').prop('disabled', true);
+      }
+
+      if(this.farm.count < this.farm.max && game.stock.checkResources(this.farm.cost)) {
+        $('#buildings-farm-btn').prop('disabled', false);
+      } else {
+        $('#buildings-farm-btn').prop('disabled', true);
+      }
+
+      if(this.sawmill.count < this.sawmill.max && game.stock.checkResources(this.sawmill.cost)) {
+        $('#buildings-sawmill-btn').prop('disabled', false);
+      } else {
+        $('#buildings-sawmill-btn').prop('disabled', true);
       }
     }
   };
