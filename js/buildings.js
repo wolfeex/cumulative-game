@@ -121,21 +121,51 @@
       };
 
       $('#buildings-house-btn').click(function() {
-        this._construct(this.house);
+        this._construct(this.house, game.renderer.langFile['log-message-house']);
         this._updateButtons();
       }.bind(this));
 
       $('#buildings-farm-btn').click(function() {
-        this._construct(this.farm);
+        this._construct(this.farm, game.renderer.langFile['log-message-farm']);
         this._updateButtons();
       }.bind(this));
 
       $('#buildings-sawmill-btn').click(function() {
-        this._construct(this.sawmill);
+        this._construct(this.sawmill, game.renderer.langFile['log-message-sawmill']);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-barn-btn').click(function() {
+        this._construct(this.barn, game.renderer.langFile['log-message-barn']);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-storehouse-btn').click(function() {
+        this._construct(this.storehouse, game.renderer.langFile['log-message-storehouse']);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-ironmine-btn').click(function() {
+        this._construct(this.ironMine, game.renderer.langFile['log-message-ironmine']);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-coppermine-btn').click(function() {
+        this._construct(this.copperMine, game.renderer.langFile['log-message-coppermine']);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-goldmine-btn').click(function() {
+        this._construct(this.goldMine, game.renderer.langFile['log-message-goldmine']);
+        this._updateButtons();
+      }.bind(this));
+
+      $('#buildings-wonder-btn').click(function() {
+        this._construct(this.wonder, game.renderer.langFile['log-message-wonder']);
         this._updateButtons();
       }.bind(this));
     },
-    _construct: function(building) {
+    _construct: function(building, message) {
       building.count++;
 
       var resources = {
@@ -155,7 +185,7 @@
       };
 
       this._addResources(resources, building.cost, true);
-      this._addResources(resources, building.stock);
+      this._addResources(stock, building.stock);
       game.stock.updateStock(resources);
       game.stock.updateMaxStock(stock);
       game.renderer.renderComponent(game.buildings);
@@ -165,6 +195,8 @@
         game.population.addMaxPopulation(building.population);
         game.renderer.renderComponent(game.population);
       }
+
+      game.log.add(message);
     },
     _getProduction: function() {
       var resources = {
@@ -246,6 +278,42 @@
         $('#buildings-sawmill-btn').prop('disabled', false);
       } else {
         $('#buildings-sawmill-btn').prop('disabled', true);
+      }
+
+      if(this.barn.count < this.barn.max && game.stock.checkResources(this.barn.cost)) {
+        $('#buildings-barn-btn').prop('disabled', false);
+      } else {
+        $('#buildings-barn-btn').prop('disabled', true);
+      }
+
+      if(this.storehouse.count < this.storehouse.max && game.stock.checkResources(this.storehouse.cost)) {
+        $('#buildings-storehouse-btn').prop('disabled', false);
+      } else {
+        $('#buildings-storehouse-btn').prop('disabled', true);
+      }
+
+      if(this.ironMine.count < this.ironMine.max && game.stock.checkResources(this.ironMine.cost)) {
+        $('#buildings-ironmine-btn').prop('disabled', false);
+      } else {
+        $('#buildings-ironmine-btn').prop('disabled', true);
+      }
+
+      if(this.copperMine.count < this.copperMine.max && game.stock.checkResources(this.copperMine.cost)) {
+        $('#buildings-coppermine-btn').prop('disabled', false);
+      } else {
+        $('#buildings-coppermine-btn').prop('disabled', true);
+      }
+
+      if(this.goldMine.count < this.goldMine.max && game.stock.checkResources(this.goldMine.cost)) {
+        $('#buildings-goldmine-btn').prop('disabled', false);
+      } else {
+        $('#buildings-goldmine-btn').prop('disabled', true);
+      }
+
+      if(this.wonder.count < this.wonder.max && game.stock.checkResources(this.wonder.cost)) {
+        $('#buildings-wonder-btn').prop('disabled', false);
+      } else {
+        $('#buildings-wonder-btn').prop('disabled', true);
       }
     }
   };
