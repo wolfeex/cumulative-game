@@ -4,7 +4,6 @@
     IDVIEW: 'population',
     HUNTDURATION: 20,
     CHOPWOODDURATION: 20,
-    ARRIVALDURATION: 30,
     init: function() {
       this.count = 1;
       this.max = 10;
@@ -14,7 +13,6 @@
       this.lastFeed = 0;
       this.endHunt = 0;
       this.endChopWood = 0;
-      this.endArrival = this.ARRIVALDURATION;
 
       $('#population-feed-btn').click(function() {
         this._feed();
@@ -32,12 +30,6 @@
       $('#population-chopwood-btn').click(function() {
         this._chopWood();
         game.renderer.renderComponent(game.stock);
-        this._updateButtons();
-      }.bind(this));
-
-      $('#population-arrival-btn').click(function() {
-        this._arrival();
-        game.renderer.renderComponent(game.population);
         this._updateButtons();
       }.bind(this));
     },
@@ -76,13 +68,6 @@
       this.endHunt = game.engine.infos.tickCount + this.CHOPWOODDURATION;
       game.log.add(game.renderer.langFile['log-message-chopwood']);
     },
-    _arrival: function() {
-      if(this.count < this.max) {
-        this.count++;
-        this.endArrival = game.engine.infos.tickCount + this.ARRIVALDURATION;
-        game.log.add(game.renderer.langFile['log-message-arrival']);
-      }
-    },
     _hungry: function() {
       if(this.hunger < this.hungerMax) {
         this.hunger++;
@@ -119,19 +104,6 @@
         }
         $('#population-hunt-btn').find('span').text(' (' + (this.endHunt - game.engine.infos.tickCount) + ')');
         $('#population-hunt-btn').prop('disabled', true);
-      }
-
-      if(this.count < this.max && this.endArrival <= game.engine.infos.tickCount) {
-        $('#population-arrival-btn').find('span').remove();
-        $('#population-arrival-btn').prop('disabled', false);
-      } else {
-        if(this.endArrival - game.engine.infos.tickCount > 0) {
-          if($('#population-arrival-btn').find('span').length == 0) {
-            $('#population-arrival-btn').append('<span></span>');
-          }
-          $('#population-arrival-btn').find('span').text(' (' + (this.endArrival - game.engine.infos.tickCount) + ')');
-        }
-        $('#population-arrival-btn').prop('disabled', true);
       }
 
       if(this.endChopWood <= game.engine.infos.tickCount) {

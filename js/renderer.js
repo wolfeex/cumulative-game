@@ -29,6 +29,9 @@
       }
     },
     renderComponent: function(component) {
+      if(component.IDVIEW === null) {
+        return;
+      }
       $('#'+ component.IDVIEW).find('[data-bind]').each(function(i, elem) {
         try {
           var data = eval($(elem).data('bind'));

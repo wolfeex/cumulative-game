@@ -16,10 +16,10 @@
       this.farm = {
         count: 0,
         production: {
-          food: 2
+          food: 1
         },
         stock: {},
-        max: 4,
+        max: 2,
         cost: {
           wood: 50
         },
@@ -28,10 +28,10 @@
       this.sawmill = {
         count: 0,
         production: {
-          wood: 2
+          wood: 1
         },
         stock: {},
-        max: 2,
+        max: 1,
         cost: {
           wood: 50
         },
@@ -44,7 +44,7 @@
           wood: 100,
           food: 100
         },
-        max: 2,
+        max: 1,
         cost: {
           wood: 50,
           iron: 20
@@ -59,7 +59,7 @@
           copper: 100,
           gold: 100
         },
-        max: 2,
+        max: 1,
         cost: {
           wood: 50,
           iron: 20
@@ -111,11 +111,10 @@
         stock: {},
         max: 1,
         cost: {
-          wood: 300,
-          iron: 300,
-          copper: 300,
-          gold: 300,
-          food: 300
+          wood: 200,
+          iron: 200,
+          copper: 200,
+          gold: 200
         },
         population: 0
       };
