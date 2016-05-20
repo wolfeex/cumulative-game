@@ -309,7 +309,16 @@
         $('#buildings-goldmine-btn').prop('disabled', true);
       }
 
-      if(this.wonder.count < this.wonder.max && game.stock.checkResources(this.wonder.cost)) {
+      if(this.wonder.count < this.wonder.max
+        && game.stock.checkResources(this.wonder.cost)
+        && this.house.count === this.house.max
+        && this.farm.count === this.farm.max
+        && this.sawmill.count === this.sawmill.max
+        && this.barn.count === this.barn.max
+        && this.storehouse.count === this.storehouse.max
+        && this.ironMine.count === this.ironMine.max
+        && this.copperMine.count === this.copperMine.max
+        && this.goldMine.count === this.goldMine.max) {
         $('#buildings-wonder-btn').prop('disabled', false);
       } else {
         $('#buildings-wonder-btn').prop('disabled', true);
