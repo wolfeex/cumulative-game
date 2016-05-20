@@ -4,6 +4,7 @@
     IDVIEW: 'buildings',
     init: function() {
       this.house = {
+        name: 'house',
         count: 0,
         production: {},
         stock: {},
@@ -14,6 +15,7 @@
         population: 10
       };
       this.farm = {
+        name: 'farm',
         count: 0,
         production: {
           food: 1
@@ -26,6 +28,7 @@
         population: 0
       };
       this.sawmill = {
+        name: 'sawmill',
         count: 0,
         production: {
           wood: 1
@@ -38,6 +41,7 @@
         population: 0
       };
       this.barn = {
+        name: 'barn',
         count: 0,
         production: {},
         stock: {
@@ -52,6 +56,7 @@
         population: 0
       };
       this.storehouse = {
+        name: 'storehouse',
         count: 0,
         production: {},
         stock: {
@@ -67,6 +72,7 @@
         population: 0
       };
       this.ironMine = {
+        name: 'ironmine',
         count: 0,
         production: {
           iron: 1
@@ -79,6 +85,7 @@
         population: 0
       };
       this.copperMine = {
+        name: 'coppermine',
         count: 0,
         production: {
           copper: 1
@@ -92,6 +99,7 @@
         population: 0
       };
       this.goldMine = {
+        name: 'goldmine',
         count: 0,
         production: {
           gold: 1
@@ -99,13 +107,14 @@
         stock: {},
         max: 1,
         cost: {
-          wood: 200,
-          iron: 200,
-          copper: 200
+          wood: 150,
+          iron: 150,
+          copper: 150
         },
         population: 0
       };
       this.wonder = {
+        name: 'wonder',
         count: 0,
         production: {},
         stock: {},
@@ -118,6 +127,16 @@
         },
         population: 0
       };
+
+      this._displayInfo(this.house);
+      this._displayInfo(this.farm);
+      this._displayInfo(this.sawmill);
+      this._displayInfo(this.barn);
+      this._displayInfo(this.storehouse);
+      this._displayInfo(this.ironMine);
+      this._displayInfo(this.copperMine);
+      this._displayInfo(this.goldMine);
+      this._displayInfo(this.wonder);
 
       $('#buildings-house-btn').click(function() {
         this._construct(this.house, game.renderer.langFile['log-message-house']);
@@ -163,6 +182,16 @@
         this._construct(this.wonder, game.renderer.langFile['log-message-wonder']);
         this._updateButtons();
       }.bind(this));
+    },
+    _displayInfo: function(building) {
+      var infos = '';
+      if(typeof building.cost.food != 'undefined') { infos += building.cost.food + 'F'; }
+      if(typeof building.cost.wood != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.wood + 'W'; }
+      if(typeof building.cost.iron != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.iron + 'I'; }
+      if(typeof building.cost.copper != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.copper + 'C'; }
+      if(typeof building.cost.gold != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.gold + 'G'; }
+
+      $('#buildings-' + building.name + '-btn').next('span.info').html(infos);
     },
     _construct: function(building, message) {
       building.count++;

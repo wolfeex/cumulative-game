@@ -65,16 +65,16 @@ body {
 
 .component-table-2 p:first-child,
 .component-table-3 p:first-child {
-  flex: 1 1 50%;
+  flex: 1 1 30%;
 }
 
 .component-table-3 p:nth-child(2) {
-  flex: 1 1 30%;
+  flex: 1 1 50%;
   text-align: left;
 }
 
 .component-table-2 p:last-child {
-  flex: 1 1 50%;
+  flex: 1 1 70%;
   text-align: right;
 }
 
@@ -96,4 +96,8 @@ body {
 #log div {
   height: 200px;
   overflow-y: scroll;
+}
+
+span.info {
+  font-size: 0.8em;
 }

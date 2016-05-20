@@ -96,25 +96,19 @@
       }
 
       if(this.endHunt <= game.engine.infos.tickCount) {
-        $('#population-hunt-btn').find('span').remove();
+        $('#population-hunt-btn').next('span.info').empty();
         $('#population-hunt-btn').prop('disabled', false);
       } else {
-        if($('#population-hunt-btn').find('span').length == 0) {
-          $('#population-hunt-btn').append('<span></span>');
-        }
-        $('#population-hunt-btn').find('span').text(' (' + (this.endHunt - game.engine.infos.tickCount) + ')');
+        $('#population-hunt-btn').next('span.info').text(' (' + (this.endHunt - game.engine.infos.tickCount) + ')');
         $('#population-hunt-btn').prop('disabled', true);
       }
 
       if(this.endChopWood <= game.engine.infos.tickCount) {
-        $('#population-chopwood-btn').find('span').remove();
+        $('#population-chopwood-btn').next('span.info').empty();
         $('#population-chopwood-btn').prop('disabled', false);
       } else {
         if(this.endChopWood - game.engine.infos.tickCount > 0) {
-          if($('#population-chopwood-btn').find('span').length == 0) {
-            $('#population-chopwood-btn').append('<span></span>');
-          }
-          $('#population-chopwood-btn').find('span').text(' (' + (this.endChopWood - game.engine.infos.tickCount) + ')');
+          $('#population-chopwood-btn').next('span.info').text(' (' + (this.endChopWood - game.engine.infos.tickCount) + ')');
         }
         $('#population-chopwood-btn').prop('disabled', true);
       }
