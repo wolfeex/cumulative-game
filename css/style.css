@@ -46,12 +46,6 @@ body {
   margin: 0.4em;
 }
 
-.component h4 {
-  text-align: center;
-  padding: 4px;
-  background-color: #ccc;
-}
-
 .component div p {
   line-height: 1.5em;
 }
@@ -97,11 +91,21 @@ body {
   text-align: right;
 }
 
+#stock > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#stock > div div p {
+  text-align: center;
+}
+
 #log {
-  height: 620px;
+  height: 440px;
 }
 
 #log div {
-  height: 570px;
+  height: 420px;
   overflow-y: scroll;
 }
