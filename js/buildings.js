@@ -186,10 +186,10 @@
     _displayInfo: function(building) {
       var infos = '';
       if(typeof building.cost.food != 'undefined') { infos += building.cost.food + 'F'; }
-      if(typeof building.cost.wood != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.wood + 'W'; }
-      if(typeof building.cost.iron != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.iron + 'I'; }
-      if(typeof building.cost.copper != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.copper + 'C'; }
-      if(typeof building.cost.gold != 'undefined') { infos += (infos.length>0?'/':'') + building.cost.gold + 'G'; }
+      if(typeof building.cost.wood != 'undefined') { infos += (infos.length>0?' ':'') + building.cost.wood + 'W'; }
+      if(typeof building.cost.iron != 'undefined') { infos += (infos.length>0?' ':'') + building.cost.iron + 'I'; }
+      if(typeof building.cost.copper != 'undefined') { infos += (infos.length>0?' ':'') + building.cost.copper + 'C'; }
+      if(typeof building.cost.gold != 'undefined') { infos += (infos.length>0?' ':'') + building.cost.gold + 'G'; }
 
       $('#buildings-' + building.name + '-btn').next('span.info').html(infos);
     },
